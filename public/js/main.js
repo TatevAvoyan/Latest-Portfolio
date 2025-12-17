@@ -831,10 +831,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let tileCountX = canvas.width / gridSize;
     let tileCountY = canvas.height / gridSize;
     
-    let snake = [{ x: 10, y: 10 }];
+    // Start snake in the middle of the canvas (works for any size)
+    let snake = [{ x: Math.floor(tileCountX / 3), y: Math.floor(tileCountY / 2) }];
     let dx = 0;
     let dy = 0;
-    let food = { x: 15, y: 15 };
+    // Food position will be set by generateFood() - use safe default within any canvas size
+    let food = { x: Math.floor(tileCountX * 0.6), y: Math.floor(tileCountY / 2) };
     let score = 0;
     let bestScore = 0;
     let gameRunning = true;
@@ -1009,7 +1011,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Restart game
     function restartGame() {
-        snake = [{ x: 10, y: 10 }];
+        // Reset snake to center of canvas (works for any size)
+        snake = [{ x: Math.floor(tileCountX / 3), y: Math.floor(tileCountY / 2) }];
         dx = 0;
         dy = 0;
         score = 0;

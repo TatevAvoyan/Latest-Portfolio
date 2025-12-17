@@ -817,10 +817,10 @@ body {
 
 #snakeCanvas {
     display: block;
-    width: 100%;
-    height: 400px;
+    margin: 0 auto;
     background: #0d1117;
     cursor: none;
+    /* Don't set width/height in CSS - let JavaScript control canvas size */
 }
 
 .snake-game-overlay {
@@ -1410,4 +1410,5 @@ body {
         margin: 0 auto;
     }
 }
+
 
