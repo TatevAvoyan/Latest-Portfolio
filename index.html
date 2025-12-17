@@ -164,7 +164,8 @@
                 <!-- Snake Game -->
                 <div class="snake-game-container">
                     <div class="game-header">
-                        <p class="game-instruction">🐍 Use WASD keys to control the snake. Eat code bugs to grow!</p>
+                        <p class="game-instruction desktop-only">🐍 Use WASD keys to control the snake. Eat code bugs to grow!</p>
+                        <p class="game-instruction mobile-only">🐍 Use buttons below to control the snake!</p>
                         <div class="score-display">
                             <span class="score-label">Score:</span>
                             <span class="score-value" id="snakeScore">0</span>
@@ -179,8 +180,20 @@
                         <div class="snake-game-overlay" id="snakeGameOverlay">
                             <div class="game-over-message" id="gameOverMessage">
                                 <h3>Game Over!</h3>
-                                <p>Press SPACE to restart</p>
+                                <p class="desktop-only">Press SPACE to restart</p>
+                                <button class="mobile-only restart-btn" id="restartBtn">Tap to Restart</button>
                             </div>
+                        </div>
+                    </div>
+                    <!-- Mobile Touch Controls -->
+                    <div class="touch-controls mobile-only" id="touchControls">
+                        <div class="touch-row">
+                            <button class="touch-btn" data-direction="up">▲</button>
+                        </div>
+                        <div class="touch-row">
+                            <button class="touch-btn" data-direction="left">◀</button>
+                            <button class="touch-btn" data-direction="down">▼</button>
+                            <button class="touch-btn" data-direction="right">▶</button>
                         </div>
                     </div>
                 </div>

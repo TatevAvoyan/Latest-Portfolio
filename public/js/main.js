@@ -1058,6 +1058,69 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Mobile Touch Controls
+    const touchControls = document.getElementById('touchControls');
+    const restartBtn = document.getElementById('restartBtn');
+    
+    if (touchControls) {
+        const touchBtns = touchControls.querySelectorAll('.touch-btn');
+        touchBtns.forEach(btn => {
+            btn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                if (!gameRunning) return;
+                
+                const direction = this.getAttribute('data-direction');
+                
+                if (direction === 'up' && dy !== 1) {
+                    dx = 0;
+                    dy = -1;
+                } else if (direction === 'down' && dy !== -1) {
+                    dx = 0;
+                    dy = 1;
+                } else if (direction === 'left' && dx !== 1) {
+                    dx = -1;
+                    dy = 0;
+                } else if (direction === 'right' && dx !== -1) {
+                    dx = 1;
+                    dy = 0;
+                }
+            });
+            
+            // Also handle click for tablets with mouse
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (!gameRunning) return;
+                
+                const direction = this.getAttribute('data-direction');
+                
+                if (direction === 'up' && dy !== 1) {
+                    dx = 0;
+                    dy = -1;
+                } else if (direction === 'down' && dy !== -1) {
+                    dx = 0;
+                    dy = 1;
+                } else if (direction === 'left' && dx !== 1) {
+                    dx = -1;
+                    dy = 0;
+                } else if (direction === 'right' && dx !== -1) {
+                    dx = 1;
+                    dy = 0;
+                }
+            });
+        });
+    }
+    
+    // Mobile restart button
+    if (restartBtn) {
+        restartBtn.addEventListener('click', function() {
+            restartGame();
+        });
+        restartBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            restartGame();
+        });
+    }
+    
     // Initialize
     generateFood();
     updateDisplays();
