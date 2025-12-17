@@ -815,13 +815,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // On mobile, use smaller canvas
         if (window.innerWidth <= 768) {
-            const mobileWidth = Math.min(containerWidth, 340);
+            const mobileWidth = Math.min(containerWidth, 300);
             canvas.width = Math.floor(mobileWidth / gridSize) * gridSize; // Keep divisible by gridSize
             canvas.height = Math.floor((mobileWidth * 0.67) / gridSize) * gridSize;
         } else {
             canvas.width = maxWidth;
             canvas.height = maxHeight;
         }
+        
+        // Set CSS dimensions to match canvas dimensions (prevents stretching)
+        canvas.style.width = canvas.width + 'px';
+        canvas.style.height = canvas.height + 'px';
     }
     
     // Set canvas size FIRST

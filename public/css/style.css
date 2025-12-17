@@ -801,13 +801,15 @@ body {
 
 .snake-game-area {
     position: relative;
-    width: 100%;
-    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     background: rgba(22, 27, 34, 0.5);
     border: 2px solid rgba(58, 123, 213, 0.3);
     border-radius: 15px;
     overflow: hidden;
+    width: fit-content;
 }
 
 .snake-game-area:hover {
@@ -1037,15 +1039,14 @@ body {
     display: block;
 }
 
-/* Mobile only - hidden on desktop */
+/* Mobile only - hidden on desktop (use !important to override component styles) */
 .mobile-only {
-    display: none;
+    display: none !important;
 }
 
-/* Touch Controls for Snake Game */
+/* Touch Controls for Snake Game (only shown on mobile via .mobile-only) */
 .touch-controls {
     margin-top: 1rem;
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
@@ -1341,13 +1342,12 @@ body {
     }
     
     .snake-game-area {
+        width: fit-content;
         max-width: 100%;
-        overflow: hidden;
     }
     
     #snakeCanvas {
         display: block;
-        margin: 0 auto;
     }
 
     /* Buttons */
