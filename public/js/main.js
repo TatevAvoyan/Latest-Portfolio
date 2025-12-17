@@ -800,19 +800,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const bestScoreDisplay = document.getElementById('snakeBestScore');
     const gameOverlay = document.getElementById('snakeGameOverlay');
     const gameOverMessage = document.getElementById('gameOverMessage');
+    const gameArea = document.getElementById('snakeGameArea');
     
     if (!canvas || !scoreDisplay || !lengthDisplay || !bestScoreDisplay) return;
     
     const ctx = canvas.getContext('2d');
     const gridSize = 20;
     
+    // Responsive canvas sizing
+    function setCanvasSize() {
+        const maxWidth = 600;
+        const maxHeight = 400;
+        const containerWidth = gameArea ? gameArea.clientWidth - 20 : maxWidth;
+        
+        // On mobile, use smaller canvas
+        if (window.innerWidth <= 768) {
+            const mobileWidth = Math.min(containerWidth, 340);
+            canvas.width = Math.floor(mobileWidth / gridSize) * gridSize; // Keep divisible by gridSize
+            canvas.height = Math.floor((mobileWidth * 0.67) / gridSize) * gridSize;
+        } else {
+            canvas.width = maxWidth;
+            canvas.height = maxHeight;
+        }
+    }
+    
     // Set canvas size FIRST
-    canvas.width = 600;
-    canvas.height = 400;
+    setCanvasSize();
     
     // Calculate tile count AFTER setting canvas size (separate for width and height)
-    const tileCountX = canvas.width / gridSize;  // 30 tiles wide
-    const tileCountY = canvas.height / gridSize; // 20 tiles tall
+    let tileCountX = canvas.width / gridSize;
+    let tileCountY = canvas.height / gridSize;
     
     let snake = [{ x: 10, y: 10 }];
     let dx = 0;
