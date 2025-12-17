@@ -1,84 +1,32 @@
 # 🎮 Gameplay Programmer Portfolio
 
-A fun, interactive portfolio website for a gameplay programmer. Features interactive games, animated backgrounds, and a modern dark theme perfect for showcasing game development work.
+Welcome to my interactive portfolio! This website is designed especially for gameplay programmers and game development enthusiasts who want to experience a unique and engaging presentation of my work and skills. 
 
-## 🎯 What Makes It Special?
+## 🕹️ What is This Project?
 
-- **🎮 Interactive Games** - Play a bug-hitting game on the home page and a Snake game in the contact section!
-- **✨ Animated Background** - Watch C++ Unreal Engine code snippets float across the screen
-- **🎨 Beautiful Dark Theme** - GitHub-inspired dark mode design
-- **📱 Fully Responsive** - Looks great on any device
-- **🔊 Sound Effects** - Satisfying audio feedback for game interactions
+This portfolio is more than just a showcase—it's a playground! 🌟  
+It combines creativity, fun, and technology to show my passion for gameplay programming. You’ll find:
 
-## 🚀 Quick Start
+- **🎮 Mini-Games**: Try a bug-hitting hammer game right on the home page, and test your reflexes with a Snake game in the contact section.
+- **✨ Animated Code Backgrounds**: Watch vibrant snippets of C++/Unreal Engine code gently float by, inspiring a techy and modern vibe.
+- **🎨 Stylish Dark Theme**: Experience a sleek, GitHub-inspired design that's easy on the eyes and fully responsive for all devices.
+- **🔊 Immersive Sound Effects**: Enjoy satisfying feedback every time you interact with the games or UI elements.
 
-1. **Clone and install**
-   ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
-   npm install
-   ```
+## 👾 Portfolio Highlights
 
-2. **Run locally**
-   ```bash
-   npm start
-   ```
+- **Showcases My Projects**: Scroll through a curated list of my favorite and most impactful gameplay programming projects, complete with visuals, descriptions, and links.
+- **About Me Section**: Get to know my journey and passion for game development.
+- **Animated, Dynamic Visuals**: Everything is engineered to catch your eye and reflect my technical skills.
+- **Contact & Socials**: Connect with me easily via LinkedIn, GitHub, or Email — all links are just a click away.
 
-3. **Open in browser**
-   ```
-   http://localhost:3000
-   ```
+## 💡 Why Did I Build This?
 
-## 🎮 Try the Games!
+I wanted my portfolio to *feel* like a game—not just look like one.  
+Every part is intentionally crafted to demonstrate my abilities in JavaScript, game logic, UX/UI, and interactive design, as well as my love for fun and polish in everything I create.
 
-- **Home Page**: Click anywhere to grab the hammer and hit bugs! 🐛🔨
-- **Contact Section**: Play Snake with WASD keys and eat code bugs! 🐍
+---
 
-## 📝 Customize It
-
-### Personal Info
-Edit `index.html` to update:
-- Your name and title
-- Contact links (LinkedIn, GitHub, Email, Phone, WhatsApp)
-- About section
-
-### Add Projects
-Edit the `projects` array in `public/js/main.js`:
-
-```javascript
-const projects = [
-    {
-        title: "Your Awesome Game",
-        description: "What makes it cool...",
-        image: "public/images/project1.jpg",
-        video: "public/videos/demo.mp4", // optional
-        github: "https://github.com/you/project",
-        details: "More details here..."
-    }
-];
-```
-
-### Add Media
-- Drop images in `public/images/`
-- Drop videos in `public/videos/` (optional)
-- Add your resume PDF to `public/resume/`
-
-## 🌐 Deploy to GitHub Pages
-
-1. Push your code to GitHub
-2. Go to Settings → Pages
-3. Select `main` branch → `/ (root)`
-4. Your site goes live! 🎉
-
-For detailed steps, see [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md)
-
-## 🛠️ Tech Stack
-
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Backend**: Node.js + Express (local dev only)
-- **Deployment**: GitHub Pages (static hosting)
-
-## 📧 Get in Touch
+## 📬 Contact
 
 - **LinkedIn**: [Tatev Avoyan](https://www.linkedin.com/in/tatev-avoyan)
 - **GitHub**: [@TatevAvoyan](https://github.com/TatevAvoyan)
@@ -86,6 +34,6 @@ For detailed steps, see [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md)
 
 ---
 
-⭐ **Like this portfolio?** Feel free to star the repo and use it for your own!
+⭐️ If you like what you see, feel free to star this repo!  
+Made with ❤️ and a lot of code bugs (some you can squash yourself!)
 
-Made with ❤️ for gameplay programmers
