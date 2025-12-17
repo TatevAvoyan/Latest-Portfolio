@@ -1,0 +1,7 @@
+# Robots.txt for tatev-avoyan.dev
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tatev-avoyan.dev/sitemap.xml
+
