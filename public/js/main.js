@@ -802,7 +802,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modalBody.innerHTML = `
             <h2>${project.title}</h2>
             ${videoHtml}
-            ${project.image ? `<img src="${project.image}" alt="${project.title}" style="width: 100%; margin-bottom: 1rem; border-radius: 5px;">` : ''}
+            ${project.image ? `<img src="${project.image}" alt="${project.title}" class="modal-project-image" style="margin-top: 1.5rem;">` : ''}
             <div style="line-height: 1.8;">${detailsHtml}</div>
             ${modalLinksHtml}
         `;
