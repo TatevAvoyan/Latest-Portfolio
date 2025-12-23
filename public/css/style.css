@@ -1047,6 +1047,45 @@ body {
     background-color: transparent;
 }
 
+/* Mobile text spacing adjustments */
+@media (max-width: 768px) {
+    #modalBody {
+        line-height: 1.5 !important;
+    }
+    
+    #modalBody h2 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.75rem !important;
+        font-size: 1.5rem !important;
+    }
+    
+    #modalBody h3 {
+        margin-top: 1rem !important;
+        margin-bottom: 0.5rem !important;
+        font-size: 1.1rem !important;
+    }
+    
+    #modalBody p {
+        margin-bottom: 0.75rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    #modalBody ul {
+        margin-left: 1.25rem !important;
+        margin-bottom: 0.75rem !important;
+        padding-left: 0.5rem !important;
+    }
+    
+    #modalBody li {
+        margin-bottom: 0.4rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    #modalBody > div {
+        line-height: 1.5 !important;
+    }
+}
+
 .close-modal {
     position: absolute;
     right: 20px;
@@ -1464,6 +1503,41 @@ body {
         width: 100%;
         min-height: fit-content;
         flex: 1;
+        line-height: 1.4 !important;
+    }
+    
+    #modalBody h2 {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.5rem !important;
+        font-size: 1.3rem !important;
+    }
+    
+    #modalBody h3 {
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.4rem !important;
+        font-size: 1rem !important;
+    }
+    
+    #modalBody p {
+        margin-bottom: 0.6rem !important;
+        line-height: 1.4 !important;
+        font-size: 0.9rem !important;
+    }
+    
+    #modalBody ul {
+        margin-left: 1rem !important;
+        margin-bottom: 0.6rem !important;
+        padding-left: 0.4rem !important;
+    }
+    
+    #modalBody li {
+        margin-bottom: 0.3rem !important;
+        line-height: 1.4 !important;
+        font-size: 0.9rem !important;
+    }
+    
+    #modalBody > div {
+        line-height: 1.4 !important;
     }
     
     .modal-project-image {
