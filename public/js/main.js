@@ -689,26 +689,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Example projects data - you can modify this or load from a JSON file
-    const projects = [
-        {
-            title: "Project 1",
-            description: "Description of your first project. Add details about what you built, technologies used, and key features.",
-            image: "public/images/project1.jpg",
-            video: null, // "public/videos/project1.mp4" if you have a video
-            github: "https://github.com/yourusername/project1",
-            details: "More detailed information about this project..."
-        },
-        {
-            title: "Project 2",
-            description: "Description of your second project.",
-            image: "public/images/project2.jpg",
-            video: null,
-            github: "https://github.com/yourusername/project2",
-            details: "More detailed information about this project..."
-        }
-        // Add more projects as needed
-    ];
+    // Use projects data from projects-data.js
+    // Make sure projects-data.js is loaded before main.js in the HTML
+    if (typeof projectsData === 'undefined') {
+        console.error('projectsData is not defined. Make sure projects-data.js is loaded before main.js');
+    }
+    const projects = projectsData || [];
 
     // Function to create project cards
     function createProjectCard(project, index) {
@@ -722,6 +708,21 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>`;
         }
         
+        // Build links HTML from links array or github property
+        let linksHtml = '';
+        if (project.links && project.links.length > 0) {
+            linksHtml = project.links.map(link => 
+                `<a href="${link.url}" target="_blank" class="btn btn-small">${link.label}</a>`
+            ).join('');
+        } else if (project.github) {
+            linksHtml = `<a href="${project.github}" target="_blank" class="btn btn-small">GitHub</a>`;
+        }
+        
+        // Debug: Log if links are found
+        if (project.links && project.links.length > 0) {
+            console.log(`Found ${project.links.length} links for project: ${project.title}`);
+        }
+        
         card.innerHTML = `
             ${imageHtml}
             <div class="project-info">
@@ -729,7 +730,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>${project.description}</p>
                 <div class="project-links">
                     <button class="btn btn-small" onclick="showProjectDetails(${index})">View Details</button>
-                    ${project.github ? `<a href="${project.github}" target="_blank" class="btn btn-small">GitHub</a>` : ''}
+                    ${linksHtml}
                 </div>
             </div>
         `;
@@ -780,12 +781,30 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
         
+        // Build links HTML for modal
+        let modalLinksHtml = '';
+        if (project.links && project.links.length > 0) {
+            modalLinksHtml = '<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">' +
+                project.links.map(link => 
+                    `<a href="${link.url}" target="_blank" class="btn btn-primary">${link.label}</a>`
+                ).join('') +
+                '</div>';
+        } else if (project.github) {
+            modalLinksHtml = `<div style="margin-top: 1rem;"><a href="${project.github}" target="_blank" class="btn btn-primary">View on GitHub</a></div>`;
+        }
+        
+        // Check if details contains HTML (starts with <)
+        const detailsContent = project.details || project.description;
+        const detailsHtml = detailsContent && detailsContent.trim().startsWith('<') 
+            ? detailsContent 
+            : `<p style="margin-bottom: 1rem; line-height: 1.8;">${detailsContent}</p>`;
+        
         modalBody.innerHTML = `
             <h2>${project.title}</h2>
             ${videoHtml}
             ${project.image ? `<img src="${project.image}" alt="${project.title}" style="width: 100%; margin-bottom: 1rem; border-radius: 5px;">` : ''}
-            <p style="margin-bottom: 1rem; line-height: 1.8;">${project.details || project.description}</p>
-            ${project.github ? `<a href="${project.github}" target="_blank" class="btn btn-primary">View on GitHub</a>` : ''}
+            <div style="line-height: 1.8;">${detailsHtml}</div>
+            ${modalLinksHtml}
         `;
         
         modal.style.display = 'block';
