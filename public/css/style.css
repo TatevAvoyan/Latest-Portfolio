@@ -1047,6 +1047,43 @@ body {
     background-color: transparent;
 }
 
+/* Desktop text spacing - more compact */
+#modalBody {
+    line-height: 1.6;
+}
+
+#modalBody h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+#modalBody h3 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.2rem;
+}
+
+#modalBody p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+#modalBody ul {
+    margin-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+#modalBody li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+#modalBody > div {
+    line-height: 1.6;
+}
+
 /* Mobile text spacing adjustments */
 @media (max-width: 768px) {
     #modalBody {
