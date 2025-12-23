@@ -1,5 +1,7 @@
 # 🎮 Gameplay Programmer Portfolio
 
+🌐 **Live Website**: [tatev-avoyan.dev](https://tatev-avoyan.dev)
+
 Welcome to my interactive portfolio! This website is designed especially for gameplay programmers and game development enthusiasts who want to experience a unique and engaging presentation of my work and skills. 
 
 ## 🕹️ What is This Project?
@@ -28,6 +30,7 @@ Every part is intentionally crafted to demonstrate my abilities in JavaScript, g
 
 ## 📬 Contact
 
+- **🌐 Website**: [tatev-avoyan.dev](https://tatev-avoyan.dev)
 - **LinkedIn**: [Tatev Avoyan](https://www.linkedin.com/in/tatev-avoyan)
 - **GitHub**: [@TatevAvoyan](https://github.com/TatevAvoyan)
 - **Email**: tatevik.avoian@gmail.com
