@@ -1363,10 +1363,23 @@ body {
 
     /* Modal */
     .modal-content {
-        margin: 10% auto;
-        padding: 1.5rem;
+        margin: 5% auto;
+        padding: 1rem;
         width: 95%;
-        max-height: 85vh;
+        max-height: 90vh;
+    }
+    
+    .modal-content img {
+        width: calc(100% + 2rem) !important;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        margin-top: -1rem !important;
+        border-radius: 0 !important;
+        max-width: none !important;
+    }
+    
+    .modal-content h2 {
+        margin-top: 0.5rem;
     }
 
     /* Footer */
@@ -1381,6 +1394,18 @@ body {
 
 /* Small phones */
 @media (max-width: 480px) {
+    .modal-content {
+        padding: 0.75rem;
+        margin: 2% auto;
+    }
+    
+    .modal-content img {
+        width: calc(100% + 1.5rem) !important;
+        margin-left: -0.75rem !important;
+        margin-right: -0.75rem !important;
+        margin-top: -0.75rem !important;
+    }
+    
     .home-title {
         font-size: 1.75rem;
     }
