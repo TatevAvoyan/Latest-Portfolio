@@ -1022,6 +1022,29 @@ body {
     max-width: 800px;
     position: relative;
     border: 1px solid #30363d;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+#modalBody {
+    width: 100%;
+    min-height: fit-content;
+    flex: 1;
+    background-color: transparent;
+}
+
+#modalBody > div {
+    width: 100%;
+    min-height: fit-content;
+}
+
+#modalBody h2,
+#modalBody h3,
+#modalBody p,
+#modalBody ul,
+#modalBody li {
+    background-color: transparent;
 }
 
 .close-modal {
@@ -1389,6 +1412,16 @@ body {
         padding: 1rem;
         width: 95%;
         max-height: 90vh;
+        min-height: fit-content;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    
+    #modalBody {
+        width: 100%;
+        min-height: fit-content;
+        flex: 1;
     }
     
     .modal-project-image {
@@ -1422,6 +1455,15 @@ body {
     .modal-content {
         padding: 0.75rem;
         margin: 2% auto;
+        min-height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #modalBody {
+        width: 100%;
+        min-height: fit-content;
+        flex: 1;
     }
     
     .modal-project-image {
